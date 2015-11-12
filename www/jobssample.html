@@ -1,0 +1,172 @@
+<div style="max-width:600px; width: 100%; margin: 0 auto;">
+    <div class="col-sm-12">
+        <a href="#/" class="btn btn-info btn-block btn-lg" style="margin-top:20px;margin-bottom:30px">Back to Main Menu</a>
+        <center><h3>Wednesday, 11/11/2015</h3></center>
+        <div class="row" ng-repeat="job in jobs" style="-moz-border-radius: 18px 18px 18px 18px; -webkit-border-radius: 18px;  border-radius: 18px 18px 18px 18px; background-color:white; margin-bottom:20px;">
+            <div class="col-lg-12" style="margin-top:15px">
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-6">
+                        <center>
+                            <font size="6">{{job.time}}</font>
+                        </center>
+                    </div>
+                    <div class="col-xs-6">
+                        <center>
+                            <button class="btn btn-lg btn-success" ng-click="showWorkItems = !showWorkItems" >Open Job</button>
+                        </center>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-4" style="text-align: right;">
+                        <font size="3">
+                            <b>Name: </b>
+                        </font>
+                    </div>
+                    <div class="col-xs-8">
+                        <font size="3">{{job.name}}</font>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-4" style="text-align: right;">
+                        <font size="3">
+                            <b>Address: </b>
+                        </font>
+                    </div>
+                    <div class="col-xs-8">
+                        <font size="3">{{job.address}}<br />{{job.city}}, {{job.state}} {{job.zip}}</font>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-4" style="text-align: right;">
+                        <font size="3">
+                            <b>Jobs: </b>
+                        </font>
+                    </div>
+                    <div class="col-xs-8">
+                        <font size="3">{{job.name}}</font>
+                    </div>
+                </div>
+                <!--<div class="row" style="margin-bottom:10px;">
+                    <div class="col-xs-6">
+                        <button ng-click="jobs.splice($index, 1)" class="btn btn-success btn-block" style="margin-bottom:15px">DELETE</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button ng-click="showWorkItems = !showWorkItems" class="btn btn-success btn-block" style="margin-bottom:15px">WORK ON JOBS</button>
+                    </div>
+                </div>-->
+                <div class="row" ng-show="showWorkItems" style="margin-bottom:10px;">
+                    <div class="col-lg-12" style="margin-bottom:10px;">
+                        <div class="col-xs-6">
+                            <font size="5">Service</font>
+                        </div>
+                        <div class="col-xs-3">
+                            <font size="5">Cost</font>
+                        </div>
+                        <div class="col-xs-3">
+                            <font size="5"></font>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom:10px;">
+                        <div class="col-xs-6">
+                            <!--{{jobs.doc.workitem.name}}-->
+                            <!--input class="form-control" placeholder="Service Name" /-->
+                            <font size="3">Empty Tank</font> <font size="2">Size: 2</font>
+                        </div>
+                        <div class="col-xs-3">
+                            <font size="3"><b>$100.00</b></font>
+                        </div>
+                        <div class="col-xs-3">
+                            <!--{{jobs.doc.workitem.cost}}-->
+                            <!--input class="form-control" placeholder="Service Cost" /-->
+                            <center>
+                                <label>
+                                    <input type="checkbox" value="1" ng-model="service1" ng-click="complete1()" ng-hide="true">
+                                    <span class="btn btn-primary" ng-show="completed1">complete</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="1" ng-model="service1" ng-click="notcomplete1()" ng-hide="true">
+                                    <span class="btn btn-default" ng-hide="uncompleted1">uncomplete</span>
+                                </label>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom:10px;">
+                        <div class="col-xs-6">
+                            <!--{{jobs.doc.workitem.name}}-->
+                            <!--input class="form-control" placeholder="Service Name" /-->
+                            <font size="3">Install Portable Container</font>
+                        </div>
+                        <div class="col-xs-3">
+                            <!--{{jobs.doc.workitem.name}}-->
+                            <!--input class="form-control" placeholder="Service Name" /-->
+                            <font size="3"><b>$200.00</b></font>
+                        </div>
+                        <div class="col-xs-3">
+                            <!--{{jobs.doc.workitem.cost}}-->
+                            <!--input class="form-control" placeholder="Service Cost" /-->
+                            <center>
+                                <label>
+                                    <input type="checkbox" value="1" ng-model="service2" ng-click="complete2()" ng-hide="true">
+                                    <span class="btn btn-primary" ng-show="completed2">complete</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="1" ng-model="service2" ng-click="notcomplete2()" ng-hide="true">
+                                    <span class="btn btn-default" ng-hide="uncompleted2">uncomplete</span>
+                                </label>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom:10px;">
+                        <div class="col-xs-6">
+                            <!--{{jobs.doc.workitem.name}}-->
+                            <!--input class="form-control" placeholder="Service Name" /-->
+                            <font size="3">Clean Leftover Spills</font>
+                        </div>
+                        <div class="col-xs-3">
+                            <font size="3"><b>$300.00</b></font>
+                        </div>
+                        <div class="col-xs-3">
+                            <!--{{jobs.doc.workitem.cost}}-->
+                            <!--input class="form-control" placeholder="Service Cost" /-->
+                            <center>
+                                <label>
+                                    <input type="checkbox" value="1" ng-model="service3" ng-click="complete3()" ng-hide="true">
+                                    <span class="btn btn-primary" ng-show="completed3">complete</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="1" ng-model="service3" ng-click="notcomplete3()" ng-hide="true">
+                                    <span class="btn btn-default" ng-hide="uncompleted3">uncomplete</span>
+                                </label>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom:10px;">
+                        <hr>
+                        <div class="col-xs-6">
+                            <!--{{jobs.doc.workitem.name}}-->
+                            <!--input class="form-control" placeholder="Service Name" /-->
+                            <font size="4">Total</font>
+                        </div>
+                        <div class="col-xs-3">
+                            <font size="3"><b>$600.00</b></font>
+                        </div>
+                        <div class="col-xs-3">
+                            <!--{{jobs.doc.workitem.cost}}-->
+                            <!--input class="form-control" placeholder="Service Cost" /-->
+                            <span ng-if="service1 && service2 && service3">
+                                <button type="button" ng-click="jobs.splice($index, 1)"  class="btn btn-primary enabled">Save</button>
+                            </span>
+                            <span ng-if="!(service1 && service2 && service3)">
+                                <button type="button" class="btn btn-default disabled">Save</button>
+                            </span>
+                        </div>
+                    </div>
+                    <!--div class="col-lg-12">
+                        <button ng-click="addWorkItem(job.doc._id)" class="btn btn-block btn-warning">Add WorkItem</button>
+                    </!--div-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
